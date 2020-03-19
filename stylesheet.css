@@ -39,7 +39,7 @@ li {
   text-align:center;
  }
   
-//.nav a:hover{color:#fa76sd;}
+.nav a:hover{color:#fa762d;}
 
 .main {
   padding: 24px 24px 24px 24px;
@@ -87,7 +87,7 @@ img {
 }
   
 .button {
-  background-color:#fa76sd;
+  background-color:#fa762d;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -114,7 +114,7 @@ img {
 }
 
 h8 {
-  text-size:32px;
-  color:#fa76sd;
+  font-size:32px;
+  color:#fa762d;
 }
   
