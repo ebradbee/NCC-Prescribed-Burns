@@ -87,7 +87,7 @@ img {
 }
   
 .button {
-  background-color: #fa762d;
+  background-color:#fa76sd;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -111,5 +111,10 @@ img {
 .footer img {
   text-align:left;
   width: 50%;
+}
+
+h8 {
+  text-size:32px;
+  color:#fa76sd;
 }
   
