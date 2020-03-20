@@ -65,7 +65,15 @@ h2 {
   height:300px;
   text-align:center;
 }
-  
+
+.twoColumn {
+  float: left;
+  width:50%;
+  padding:10px;
+  height:300px;
+  text-align:center;
+}  
+
 .row:after {
   content: "";
   display:table;
@@ -75,6 +83,9 @@ h2 {
 @media screen and (max-width:600px) {
   .column {
     width: 100%;
+  }
+  .twoColumn {
+    width:100%;
   }
 }
   
