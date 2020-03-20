@@ -128,10 +128,9 @@ h8 {
   color:#fa762d;
 }
   
-#s1 a:link {
-  text-decoration:none;
+.steps a:link, 
+.steps a:visited,
+.steps a:hover {
   color:#fa762d;
-  text-align:center;
-  font-size:20px;
-  font-weight:normal;
+  text-decoration:none;
 }
