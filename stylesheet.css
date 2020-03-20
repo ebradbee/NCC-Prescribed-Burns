@@ -128,7 +128,7 @@ h8 {
   color:#fa762d;
 }
   
-#s1, #s2, #s3, #s4, #s5 {
+#s1 a:link {
   text-decoration:none;
   color:#fa762d;
   text-align:center;
