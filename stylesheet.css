@@ -135,14 +135,14 @@ h8 {
   text-decoration:none;
 }
 
-.img_UX {
+.white_main {
   padding: 24px 24px 24px 24px;
   margin: 30px 30px 30px 30px;
   background:white;
   text-align:center;
 }
   
-.img_UX img {
+.white_main img {
   max-width: 100%;
   height: auto;
   text-align: center;
