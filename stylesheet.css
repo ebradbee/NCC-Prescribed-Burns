@@ -134,3 +134,18 @@ h8 {
   color:#fa762d;
   text-decoration:none;
 }
+
+.img_UX {
+  padding: 24px 24px 24px 24px;
+  margin: 30px 30px 30px 30px;
+  background:white;
+  text-align:center;
+}
+  
+.img_UX img {
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 10px;
+  margin: 10px
+}
