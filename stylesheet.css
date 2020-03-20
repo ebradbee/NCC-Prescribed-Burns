@@ -128,3 +128,10 @@ h8 {
   color:#fa762d;
 }
   
+#s1, #s2, #s3, #s4, #s5 {
+  text-decoration:none;
+  color:#fa762d;
+  text-align:center;
+  font-size:20px;
+  font-weight:normal;
+}
