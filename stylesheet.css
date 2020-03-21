@@ -96,31 +96,18 @@ img {
     margin:10px;
 }
 
-/* Code from https://fdossena.com/?p=html5cool/buttons/i.frag */
-.button a{
- display:inline-block;
- padding:0.35em 1.2em;
- background-color:white;
- border:0.1em solid #fa762d;
- margin:0 0.3em 0.3em 0;
- border-radius:0.12em;
- box-sizing: border-box;
- text-decoration:none;
- color:#fa762d;
- text-align:center;
- transition: all 0.2s;
+.button {
+  background-color:#fa762d;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
-.button a:hover{
- color:white;
- background-color:#fa762d;
-}
-@media all and (max-width:30em){
- .button a{
-  display:block;
-  margin:0.4em auto;
- }
-}
-  
+
 .footer {
    left: 0;
    bottom: 0;
