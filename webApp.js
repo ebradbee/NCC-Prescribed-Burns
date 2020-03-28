@@ -1,14 +1,13 @@
-require([
-    "esri/Map",
-    "esri/views/MapView",
-    "esri/layers/FeatureLayer"
-  ],
-  function(
-    Map, 
-    MapView,
-    FeatureLayer
-  ) {
+// Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
+// To load the Map, MapView, and FeatureLayer class
+// pass them through the require() to load them into the script
+// and use their local variable names (Map, Mapview, and FeatureLayer) as the 
+// positional arguments for the callback function
 
+require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"],
+  function(Map, MapView, FeatureLayer) {
+
+// Pass parameters to the constructor to set class properties
     var map = new Map({
       basemap: "topo-vector"
     });
@@ -19,8 +18,9 @@ require([
       center: [-78.042512, 44.085821],
       zoom: 12
     });
-
-  // Add a feature layer to map with all features visible (no filter)
+    
+// Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/
+// Add a feature layer to map with all features visible (no filter)
   var featureLayer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/PrescribedBurn/FeatureServer/0",
       outFields: ["*"],  // Return all fields to client
