@@ -156,3 +156,13 @@ h8 {
   padding: 10px;
   margin: 10px
 }
+
+ #viewDiv {
+      height: 50%;
+      width: 50%;
+      top:100px;
+      left:300px;
+      right: 10px;
+      bottom: 50px;
+      position: fixed;
+    }
