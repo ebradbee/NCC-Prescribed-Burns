@@ -1,12 +1,10 @@
 // Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
-// To load the Map, MapView, and FeatureLayer class
-// pass them through the require() to load them into the script
-// and use their local variable names (Map, Mapview, and FeatureLayer) as the 
-// positional arguments for the callback function
-
+// To load the Map, MapView, and FeatureLayer class: pass them through the require()
+// and use their local variable names (Map, Mapview, and FeatureLayer) as the positional arguments for the callback function
 require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"],
   function(Map, MapView, FeatureLayer) {
 
+// Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
 // Pass parameters to the constructor to set class properties
     var map = new Map({
       basemap: "topo-vector"
@@ -54,9 +52,7 @@ require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"],
     });
 
     // Server-side filter
-    function setFeatureLayerFilter(expression) {
-      featureLayer.definitionExpression = expression;
-    }
+   // function setFeatureLayerFilter(expression) {featureLayer.definitionExpression = expression;}
 
     // Client-side filter
     function setFeatureLayerViewFilter(expression) {
