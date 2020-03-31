@@ -158,13 +158,12 @@ h8 {
 }
 
  #viewDiv {
-      height: auto;
-      width: auto;
+      height: 90%;
+      width: 90%;
       top:100px;
       left:300px;
-      right: 300px;
-      bottom: auto;
-      position: absolute
-      ;
+      right: 10px;
+      bottom: 50px;
+      position: fixed;
     }
 
