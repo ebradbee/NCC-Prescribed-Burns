@@ -1,8 +1,11 @@
 // Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
 // To load the Map, MapView, and FeatureLayer class: pass them through the require()
 // and use their local variable names (Map, Mapview, and FeatureLayer) as the positional arguments for the callback function
-require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"],
-  function(Map, MapView, FeatureLayer) {
+  require([
+    "esri/Map", 
+    "esri/views/MapView", 
+    "esri/layers/FeatureLayer"
+  ], function(Map, MapView, FeatureLayer) {
 
 // Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
 // Pass parameters to the constructor to set class properties
@@ -19,14 +22,14 @@ require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"],
     
 // Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/
 // Add a feature layer to map with all features visible (no filter)
-  var featureLayer = new FeatureLayer({
-      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/PrescribedBurn/FeatureServer/0",
-      outFields: ["*"],  // Return all fields to client
-      popupTemplate: {  // Enable a popup on client
-        title: "{Year}", // Show field value
-        content: "This burn was completed in {Year}."  // Show field value
-      }
-    });
+    var featureLayer = new FeatureLayer({
+        url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/PrescribedBurn/FeatureServer/0",
+        outFields: ["*"],  // Return all fields to client
+        popupTemplate: {  // Enable a popup on client
+          title: "{Year}", // Show field value
+          content: "This burn was completed in {Year}."  // Show field value
+        }
+      });
 
     map.add(featureLayer);
 
