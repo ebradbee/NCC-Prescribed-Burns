@@ -46,13 +46,13 @@ requirejs(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"],
 
     selectFilter.addEventListener('change', function (event) {
       // Server side
-      //setFeatureLayerFilter(event.target.value);
+      setFeatureLayerFilter(event.target.value);
       // Client side
       setFeatureLayerViewFilter(event.target.value);
     });
 
     // Server-side filter
-   // function setFeatureLayerFilter(expression) {featureLayer.definitionExpression = expression;}
+    function setFeatureLayerFilter(expression) {featureLayer.definitionExpression = expression;}
 
     // Client-side filter
     function setFeatureLayerViewFilter(expression) {
