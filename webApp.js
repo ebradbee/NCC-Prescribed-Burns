@@ -1,7 +1,7 @@
 // Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
 // To load the Map, MapView, and FeatureLayer class: pass them through the require()
 // and use their local variable names (Map, Mapview, and FeatureLayer) as the positional arguments for the callback function
-require.js(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"],
+requirejs(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"],
   function(Map, MapView, FeatureLayer) {
 
 // Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
