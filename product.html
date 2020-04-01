@@ -39,18 +39,22 @@
         zoom: 12
       });
     
-// Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/
 // Reference: Configure pop-ups - Link: https://developers.arcgis.com/javascript/latest/guide/configure-pop-ups/
-    
+      var popupPB = {
+        "title": "Prescribed Burn Information", // showing the title
+        "content": function() {
+          return "This is the {Parcel} Site. This burn was completed in {Year} and covered {UTM_HA} hectares.";
+        }
+      }
+      
+// Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/      
       var featureLayer = new FeatureLayer({
         url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/PrescribedBurn/FeatureServer/0",
         outFields: ["Parcel","Year","UTM_HA"],  // Returning select fields to the client
-        popupTemplate: {  // Enable a popup on client
-          title: "Prescribed Burn Information", // showing the title
-          content: function() {
-            return "This is the {Parcel} Site. This burn was completed in {Year} and covered {UTM_HA} hectares."}})
+        popupTemplate: popupPB
+      });
     
-      map.add(featureLayer);
+      map.add(featureLayer,0);
     
       // Create a UI with the filter expressions
     
