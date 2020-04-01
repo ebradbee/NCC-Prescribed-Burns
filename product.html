@@ -40,13 +40,15 @@
       });
     
 // Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/
+// Reference: Configure pop-ups - Link: https://developers.arcgis.com/javascript/latest/guide/configure-pop-ups/
     
       var featureLayer = new FeatureLayer({
         url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/PrescribedBurn/FeatureServer/0",
         outFields: ["*"],  // Return all fields to client
         popupTemplate: {  // Enable a popup on client
-          title: "{Year}", // Show field value
-          content: "This burn was completed in {Year}."   // Show field value
+          title: "Prescribed Burn Information", // showing the title
+          content: function() {
+            return "This is the {Parcel} Site. This burn was completed in {Year} and covered {UTM_HA} hectares."
         }
       });
     
@@ -133,7 +135,7 @@
 <div class="main">
   <h1>GEOM99 Web GIS Development 2020</h1>
 </div>
-<div>
+<div class="main">
   <div id="viewDiv"></div>
 </div>
 <div class="footer">
