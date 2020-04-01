@@ -80,7 +80,15 @@
     <h8> Step 3 </h8>
   </a>
   <h1> Build Solutions/Continue to Research and Troubleshoot </h1>
-  <h2> ... </h2> 
+  <h2> Found Additional Solutions </h2>
+  <h2> <b> V. Web AppBuilder for ArcGIS: Group Filter Widget <b> </h2>
+  <h2> Advantages: No coding required, ready-to-use group filter widget available, uses ESRI products (preferred by client), host online or run on seperate server, ability to apply filter on one or more layers within the same map </h2> 
+  <h2> Disadvantage: Limited flexibility on application style and content, will require code reworking to filter the parcel name and year </h2>
+  <h2> <b> VI. JavaScript API: Query a Feature Layer <b> </h2>
+  <h2> Advantages: Uses ESRI products (preferred by client), Server-side and client-side filter available, potentiall could display parcel and prescribed burn sites by year, easy for user to filter by year, map can be integrated within a website, host online or run on seperate server, can add additonal add-ons to the application </h2> 
+  <h2> Disadvantage: Does not provide dropdown functionality, does not provide a simplified view of spatial data (like a time-slider) </h2>
+  <h1> Our Final Decision: USE THE JAVASCRIPT API: FILTER A FEATURE LAYER </h1>
+  <h2> Explanation: This solution gives a dropdown option to the user to choose the year that they are looking for. This adds user functionality that does not exist with time-slider solutions. With additional configurement, there may be a possibilty to write SQL expressions that filter the PB sites by year AND by parcel name. This is the utlimate goal for the web application because this is what the end-user has expressed as their need. The ability to code for additional features (like pop-ups) gives this option an added boost above the rest </h2>   
 </div>
     
 <div class="main">
