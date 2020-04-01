@@ -162,13 +162,16 @@ h8 {
 }
 
 /* Reference: ArcGIS JavaScript Tutorials: Display point, line, and polygon graphics - Link: https://developers.arcgis.com/labs/javascript/display-point-line-and-polygon-graphics/ */
- #viewDiv {
-      height: 90%;
-      width: 90%;
+/* Used to format the final web application in the webpage */ 
+#viewDiv {
+      height: 100%;
+      width: 100%;
       top:100px;
-      left:300px;
-      right: 10px;
-      bottom: 50px;
+      left:50px;
+      right:50px;
+      padding:0px;
+      margin:0px;
+      bottom:100px;
       position: fixed;
     }
 
