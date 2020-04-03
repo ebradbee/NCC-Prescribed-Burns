@@ -54,7 +54,10 @@
         container: "viewDiv",
         map: map,
         center: [-78.042512, 44.085821],
-        zoom: 12
+        zoom: 12,
+        contraints: {
+          lods: TileInfo.create().lods
+        }
       });
     
 // Reference: Configure pop-ups - Link: https://developers.arcgis.com/javascript/latest/guide/configure-pop-ups/
