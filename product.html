@@ -11,6 +11,7 @@
 <script src="https://js.arcgis.com/4.13/"></script>
   
 <script>
+  
 // Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
 // To load the Map, MapView, and FeatureLayer class: pass them through the require()
 // and use their local variable names (Map, Mapview, and FeatureLayer) as the positional arguments for the callback function
@@ -27,8 +28,8 @@
       FeatureLayer,
       Basemap
     ) {
-// Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
-// Pass parameters to the constructor to set class properties
+    
+
 // Reference: Basemap - Link: https://developers.arcgis.com/javascript/latest/api-reference/esri-Basemap.html#portalItem
 // create a basemap from a dynamic mapserver
       var basemap = new Basemap({
@@ -41,6 +42,9 @@
         title: "basemap",
         id: "basemap"
       });
+    
+// Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
+// Pass parameters to the constructor to set class properties    
     
       var map = new Map({
         basemap: basemap
@@ -70,7 +74,7 @@
     
       map.add(featureLayer,0);
     
-      // Create a UI with the filter expressions
+// Create a UI with the filter expressions
     
       var sqlExpressions = ["Year = 2006", "Year = 2007", "Year = 2008", "Year = 2009", "Year = 2010", "Year = 2010", "Year = 2011", "Year = 2012", "Year = 2013", "Year = 2014", "Year = 2015", "Year = 2016", "Year = 2017", "Year = 2018", "Year = 2019", "Year = 2020"];
       
@@ -86,54 +90,25 @@
       view.ui.add(selectFilter, "top-right");
         
       selectFilter.addEventListener('change', function (event) {
-        // Server side
-        //setFeatureLayerFilter(event.target.value);
-        // Client side
+// Server side
+//setFeatureLayerFilter(event.target.value);
+// Client side
         setFeatureLayerViewFilter(event.target.value);
       });
     
-      // Server-side filter
+// Server-side filter
       function setFeatureLayerFilter(expression) {
         featureLayer.definitionExpression = expression;
       }
-    
-      // Client-side filter
+
+// Client-side filter
       function setFeatureLayerViewFilter(expression) {
         view.whenLayerView(featureLayer).then(function(featureLayerView) {
           featureLayerView.filter = {
             where: expression
           };
-          //*** CHALLENGE - Style the excluded features ***//
-          // featureLayerView.effect = {
-          //   filter: {
-          //     where: expression
-          //   },
-          //   excludedEffect: "opacity(50%)"
-          // }
         });
       }
-
-      //*** CHALLENGE: Find and highlight features ***//
-    
-//       var highlight;
-
-//       view.whenLayerView(featureLayer).then(function(featureLayerView) {
-//         view.on("pointer-move", function(event){
-//           view.hitTest(event).then(function(response){
-//             // Only return features for the feature layer
-//             var feature = response.results.filter(function (result) {
-//              return result.graphic.layer === featureLayer;
-//             })[0].graphic;
-//             if (highlight) {
-//              highlight.remove();
-//             }
-//             // Highlight feature
-//             highlight = featureLayerView.highlight(feature);
-//           });
-//         });
-//       });
-
-    });  
   
 </script>
 </head>
