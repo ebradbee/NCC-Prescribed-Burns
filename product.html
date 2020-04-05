@@ -20,13 +20,15 @@
       "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
-      "esri/widgets/Legend"
+      "esri/widgets/Legend",
+      "esri/widgets/BasemapToggle"
     ],
     function(
       Map, 
       MapView,
       FeatureLayer,
-      Legend
+      Legend,
+      BasemapToggle
     ) {
 
  // Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/
@@ -46,6 +48,13 @@
 // Reference: Legend Widget - Link: https://developers.arcgis.com/javascript/latest/sample-code/widgets-legend/index.html
 // Reference: Legend - Link: https://totalapis.github.io/api-reference/esri-widgets-Legend.html
     view.ui.add(new Legend({ view: view}), "bottom-left"); 
+	  
+// Reference: Select a Basemap - Link: https://developers.arcgis.com/javascript/latest/guide/select-a-basemap/    
+      var basemapToggle = new BasemapToggle({
+	view: view,
+        nextBasemap: "satellite"
+      });
+      view.ui.add(basemapToggle, "bottom-right");  
 	  
 // Styling the polygon layer
 	  var perimeterRenderer = {
