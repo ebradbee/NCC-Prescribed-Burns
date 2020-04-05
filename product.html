@@ -43,17 +43,6 @@
         zoom: 6
       });
 	  
-// Reference: Legend - Link: https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html
-//Reference: Intro to PopupTemplate - Link: https://codepen.io/pen?&editable=true&editors=100
-      var legend = new Legend({
-          layerInfos: [{
-              layer: featureLayer,
-              title: "Wildfires in Alberta"
-            }]
-        });
-	  
-      view.ui.add(legend, "bottom-left"); 
-	  
 // Styling the polygon layer
 	  var perimeterRenderer = {
 	    type: "simple",
@@ -115,7 +104,20 @@
           };
         });
       }
-    });
+	  
+// Reference: Legend - Link: https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html
+//Reference: Intro to PopupTemplate - Link: https://codepen.io/pen?&editable=true&editors=100
+      var legend = new Legend({
+          layerInfos: [{
+	      view: view,
+              layer: featureLayer,
+              title: "Wildfires in Alberta"
+            }]
+        });
+	  
+      view.ui.add(legend, "bottom-left"); 
+    
+  });
     
 </script>
 </head>
