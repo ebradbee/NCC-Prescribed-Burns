@@ -19,67 +19,54 @@
   require([
       "esri/Map",
       "esri/views/MapView",
-      "esri/layers/FeatureLayer",
-      "esri/Basemap"
+      "esri/layers/FeatureLayer"
     ],
     function(
       Map, 
       MapView,
-      FeatureLayer,
-      Basemap
+      FeatureLayer
     ) {
-    
 
-// Reference: Basemap - Link: https://developers.arcgis.com/javascript/latest/api-reference/esri-Basemap.html#portalItem
-// create a basemap from a dynamic mapserver
-      var basemap = new Basemap({
-        baseLayers: [
-          new MapImageLayer({
-            url: "https://ws.giscache.lrc.gov.on.ca/arcgis/rest/services/LIO_Cartographic/LIO_Topographic/MapServer",
-            title: "Basemap"
-          })
-        ],
-        title: "basemap",
-        id: "basemap"
-      });
-    
-// Reference: Programming Patterns - Link: https://developers.arcgis.com/javascript/latest/guide/programming-patterns/
-// Pass parameters to the constructor to set class properties    
-    
+ // Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/
       var map = new Map({
-        basemap: basemap
+        basemap: "topo-vector"
       });
 
       var view = new MapView({
         container: "viewDiv",
         map: map,
-        center: [-78.042512, 44.085821],
-        zoom: 12,
-        contraints: {
-          lods: TileInfo.create().lods
+        center: [-114.547345, 54.986604],
+        zoom: 6
+      });
+	  
+	  var perimeterRenderer = {
+	    type: "simple",
+		symbol: {
+		  type: "simple-fill",
+		  color: "#ffb347",
+		  outline: {
+		  width: 0.5,
+		  color: "#565656"
+		  }
+		}
+	};
+	  
+	  // Add a feature layer to map with all features visible (no filter)
+	  var featureLayer = new FeatureLayer({
+        url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/ABW10C/FeatureServer/0",
+		renderer: perimeterRenderer,
+		opacity: .75,
+        outFields: ["*"],  // Return all fields to client
+        popupTemplate: {  // Enable a popup on client
+          title: "{ALIAS}", // Show field value
+          content: "<b>Year:</b> {YEAR}<br><b>Code:</b> {District}<br><b>Hectares:</b> {SUM_HECTAR}<br>"  // Show field value
         }
       });
     
-// Reference: Configure pop-ups - Link: https://developers.arcgis.com/javascript/latest/guide/configure-pop-ups/
-      var popupPB = {
-        "title": "Prescribed Burn Information", // showing the title
-        "content": function() {
-          return "This is the {Parcel} Site. This burn was completed in {Year} and covered {UTM_HA} hectares.";
-        }
-      }
-      
-// Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/      
-      var featureLayer = new FeatureLayer({
-        url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/PrescribedBurn/FeatureServer/0",
-        outFields: ["Parcel","Year","UTM_HA"],  // Returning select fields to the client
-        popupTemplate: popupPB
-      });
+      map.add(featureLayer);
     
-      map.add(featureLayer,0);
-    
-// Create a UI with the filter expressions
-    
-      var sqlExpressions = ["Year = 2006", "Year = 2007", "Year = 2008", "Year = 2009", "Year = 2010", "Year = 2010", "Year = 2011", "Year = 2012", "Year = 2013", "Year = 2014", "Year = 2015", "Year = 2016", "Year = 2017", "Year = 2018", "Year = 2019", "Year = 2020"];
+      // Create a UI with the filter expressions
+      var sqlExpressions = ["Year = 2009", "Year = 2010", "Year = 2011", "Year = 2012", "Year = 2013", "Year = 2014", "Year = 2015", "Year = 2016", "Year = 2017", "Year = 2018", "Year = 2019"];
       
       var selectFilter = document.createElement("select");
       selectFilter.setAttribute("class", "esri-widget esri-select");
@@ -93,18 +80,18 @@
       view.ui.add(selectFilter, "top-right");
         
       selectFilter.addEventListener('change', function (event) {
-// Server side
-//setFeatureLayerFilter(event.target.value);
-// Client side
+        // Server side
+        //setFeatureLayerFilter(event.target.value);
+        // Client side
         setFeatureLayerViewFilter(event.target.value);
       });
     
-// Server-side filter
+      // Server-side filter
       function setFeatureLayerFilter(expression) {
         featureLayer.definitionExpression = expression;
       }
-
-// Client-side filter
+    
+      // Client-side filter
       function setFeatureLayerViewFilter(expression) {
         view.whenLayerView(featureLayer).then(function(featureLayerView) {
           featureLayerView.filter = {
@@ -112,7 +99,8 @@
           };
         });
       }
-  
+    });
+    
 </script>
 </head>
 <body>
