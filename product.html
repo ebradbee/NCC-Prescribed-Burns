@@ -48,15 +48,6 @@
 // Reference: Legend Widget - Link: https://developers.arcgis.com/javascript/latest/sample-code/widgets-legend/index.html
 // Reference: Legend - Link: https://totalapis.github.io/api-reference/esri-widgets-Legend.html
     //view.ui.add(new Legend({ view: view}), "bottom-left");
-      var legend = new Legend({
-          view: view,
-          layerInfos: [{
-              layer: featureLayer,
-              title: 'Wildfires in Alberta'
-            }]
-        });
-	  
-	  view.ui.add(legend, "bottom-left"); 
 	  
 // Reference: Select a Basemap - Link: https://developers.arcgis.com/javascript/latest/guide/select-a-basemap/    
       var basemapToggle = new BasemapToggle({
@@ -91,6 +82,16 @@
       });
     
       map.add(featureLayer);
+	  
+      var legend = new Legend({
+          view: view,
+          layerInfos: [{
+              layer: featureLayer,
+              title: 'Wildfires in Alberta'
+            }]
+        });
+	  
+	  view.ui.add(legend, "bottom-left"); 
     
       // Create a UI with the filter expressions
       var sqlExpressions = ["Year = 2009", "Year = 2010", "Year = 2011", "Year = 2012", "Year = 2013", "Year = 2014", "Year = 2015", "Year = 2016", "Year = 2017", "Year = 2018", "Year = 2019"];
