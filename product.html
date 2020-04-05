@@ -31,33 +31,33 @@
 
  // Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/
  // Creates the map
-      var map = new Map({
-        basemap: "topo-vector"
-      });
-	  
+    var map = new Map({
+    basemap: "topo-vector"
+    });
+    
 // Creates the MapView (holds the map)
-      var view = new MapView({
-        container: "viewDiv",
-        map: map,
-        center: [-114.547345, 54.986604],
-        zoom: 6
-      });
-	  
+    var view = new MapView({
+    container: "viewDiv",
+    map: map,
+    center: [-114.547345, 54.986604],
+    zoom: 6
+    });
+    
 //Reference: Intro to PopupTemplate - Link: https://codepen.io/pen?&editable=true&editors=100
-      view.ui.add(new Legend({ view: view}), "bottom-left"); 
-	  
+    view.ui.add(new Legend({ view: view}), "bottom-left"); 
+    
 // Styling/rendering the polygon layer 
-	  var perimeterRenderer = {
-	    type: "simple",
-		symbol: {
-		  type: "simple-fill",
-		  color: "#fa762d",
-		  outline: {
-		  width: 0.5,
-		  color: "#ffdd99"
-		  }
-		}
-	};
+    var perimeterRenderer = {
+    type: "simple",
+    symbol: {
+        type: "simple-fill",
+        color: "#fa762d",
+        outline: {
+        width: 0.5,
+        color: "#ffdd99"
+        }
+    }
+};
 
 // Add a feature layer to map with all features visible (no filter)
 	var template = {
@@ -74,7 +74,6 @@
 			    digitSeparator: false,
 			    places: 0
 			},
-			{
 			  fieldName: "District",
 			  label: "Code: ",
 			},
@@ -93,52 +92,51 @@
 
 		// Reference the popupTemplate instance in the
 		// popupTemplate property of FeatureLayer
-		var featureLayer = new FeatureLayer({
-		  url:
-		    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/ABW10C/FeatureServer/0",
-		  popupTemplate: template
-		  renderer: perimeterRenderer,
-		      opacity: .75,
-		  outFields: ["*"],  // Return all fields to client
-		});
-		map.add(featureLayer);
-	      });
-    
-      // Create a UI with the filter expressions
-      var sqlExpressions = ["Year = 2009", "Year = 2010", "Year = 2011", "Year = 2012", "Year = 2013", "Year = 2014", "Year = 2015", "Year = 2016", "Year = 2017", "Year = 2018", "Year = 2019"];
-      
-      var selectFilter = document.createElement("select");
-      selectFilter.setAttribute("class", "esri-widget esri-select");
-      selectFilter.setAttribute("style", "width: 275px; font-family: Avenir Next W00; font-size: 1em;");
-      sqlExpressions.forEach(function(sql){
-        var option = document.createElement("option");
-        option.value = sql;
-        option.innerHTML = sql;
-        selectFilter.appendChild(option);
-      });
-      view.ui.add(selectFilter, "top-right");
-        
-      selectFilter.addEventListener('change', function (event) {
-        // Server side
-        //setFeatureLayerFilter(event.target.value);
-        // Client side
-        setFeatureLayerViewFilter(event.target.value);
-      });
-    
-      // Server-side filter
-      function setFeatureLayerFilter(expression) {
-        featureLayer.definitionExpression = expression;
-      }
-    
-      // Client-side filter
-      function setFeatureLayerViewFilter(expression) {
-        view.whenLayerView(featureLayer).then(function(featureLayerView) {
-          featureLayerView.filter = {
-            where: expression
-          };
-        });
-      }
+    var featureLayer = new FeatureLayer({
+    url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/ABW10C/FeatureServer/0",
+    popupTemplate: template
+    renderer: perimeterRenderer,
+    opacity: .75,
+    outFields: ["*"],  // Return all fields to client
     });
+
+    map.add(featureLayer);
+        });
+
+      // Create a UI with the filter expressions
+    var sqlExpressions = ["Year = 2009", "Year = 2010", "Year = 2011", "Year = 2012", "Year = 2013", "Year = 2014", "Year = 2015", "Year = 2016", "Year = 2017", "Year = 2018", "Year = 2019"];
+    
+    var selectFilter = document.createElement("select");
+    selectFilter.setAttribute("class", "esri-widget esri-select");
+    selectFilter.setAttribute("style", "width: 275px; font-family: Avenir Next W00; font-size: 1em;");
+    sqlExpressions.forEach(function(sql){
+    var option = document.createElement("option");
+    option.value = sql;
+    option.innerHTML = sql;
+    selectFilter.appendChild(option);
+    });
+    view.ui.add(selectFilter, "top-right");
+    
+    selectFilter.addEventListener('change', function (event) {
+    // Server side
+    //setFeatureLayerFilter(event.target.value);
+    // Client side
+    setFeatureLayerViewFilter(event.target.value);
+    });
+
+    // Server-side filter
+    function setFeatureLayerFilter(expression) {
+    featureLayer.definitionExpression = expression;
+    }
+
+    // Client-side filter
+    function setFeatureLayerViewFilter(expression) {
+    view.whenLayerView(featureLayer).then(function(featureLayerView) {
+        featureLayerView.filter = {
+        where: expression
+        };
+    });
+    }
     
 </script>
 </head>
