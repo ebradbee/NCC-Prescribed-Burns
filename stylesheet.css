@@ -50,7 +50,7 @@ li {
   text-align:center;
 }
 
-h2 {
+h2, h7 {
   text-align:left;
   font-weight:normal;
   font-size:20px;
@@ -175,8 +175,3 @@ h8 {
       position: fixed;
     }
 
-h7 {
-  text-align:left;
-  font-weight:normal;
-  font-size:20px;
-}
