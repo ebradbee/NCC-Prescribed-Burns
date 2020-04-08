@@ -6,6 +6,7 @@ body {margin:0;
 }
 
 /* Reference: w3schools - Link: https://www.w3schools.com/css/css3_images.asp */
+/* Styles the ember logo inline with the nav bar */
 .logo img {
   position:absolute;
   margin-top:5px;
@@ -15,6 +16,7 @@ body {margin:0;
 }
 
 /* Reference: w3schools - Link: https://www.w3schools.com/css/css_navbar.asp */
+/* Styles the nav bar */
 .nav{
   width:100%;
   top:0;
@@ -51,9 +53,11 @@ a {
  }
 
 /* Reference: w3schools - Link: https://www.w3schools.com/css/css_navbar.asp */
+/* Styles the hover on the nav bar */
 .nav a:hover{color:#fa762d;}
 
 /* Reference - w3schools - Link: https://www.w3schools.com/css/css_boxmodel.asp */
+/* Styles the main box - with a light gray background and centers the text */
 .main {
   padding: 24px 24px 24px 24px;
   margin: 30px 30px 30px 30px;
@@ -74,6 +78,7 @@ h2, h7 {
 }
 
 /* Reference - w3schools - Link: https://www.w3schools.com/css/css_boxmodel.asp */
+/* formats the page for three columns */
 .column {
   float: left;
   width:33.33%;
@@ -83,6 +88,7 @@ h2, h7 {
 }
 
 /* Reference - w3schools - Link: https://www.w3schools.com/css/css_boxmodel.asp */
+/* formats the page for two columns */
 .twoColumn {
   float: left;
   width:50%;
@@ -98,6 +104,7 @@ h2, h7 {
 }
 
 /* Reference: w3schools - Link: https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+/* Makes the page responsive */
 @media screen and (max-width:600px) {
   .column {
     width: 100%;
@@ -163,7 +170,6 @@ h8 {
 }
 
 /* Reference: w3schools - Link: https://www.w3schools.com/css/css_navbar.asp */
-/* Styles the hover on the nav bar */
 .steps a:link, 
 .steps a:visited,
 .steps a:hover {
@@ -172,6 +178,7 @@ h8 {
 }
 
 /* Reference - w3schools - Link: https://www.w3schools.com/css/css_boxmodel.asp */
+/* Styles the page box to have a white background */
 .white_main {
   padding: 24px 24px 24px 24px;
   margin: 30px 30px 30px 30px;
@@ -180,6 +187,7 @@ h8 {
 }
 
 /* Reference: w3schools - Link: https://www.w3schools.com/css/css3_images.asp */
+/* Styles all the images found within the white_main class */
 .white_main img {
   max-width: 100%;
   height: auto;
