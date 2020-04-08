@@ -52,6 +52,7 @@
       view.ui.add(basemapToggle, "bottom-right");  
 	  
 // Styling the polygon layer
+// Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/
 	  var perimeterRenderer = {
 	    type: "simple",
 		symbol: {
@@ -65,6 +66,7 @@
 	};
 
 // Add a feature layer to map with all features visible (no filter)
+// Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/
 	  var featureLayer = new FeatureLayer({
         url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/ABW10C/FeatureServer/0",
 		renderer: perimeterRenderer,
@@ -90,7 +92,8 @@
 	  
 	  view.ui.add(legend, "bottom-left"); 
     
-// Create a UI with the filter expressions
+// Create a UI with the filter expressions - Filtering for each YEAR 
+// Reference: Filter a Feature Layer - Link: https://developers.arcgis.com/javascript/latest/guide/filter-a-feature-layer/
       var sqlExpressions = ["Year = 2009", "Year = 2010", "Year = 2011", "Year = 2012", "Year = 2013", "Year = 2014", "Year = 2015", "Year = 2016", "Year = 2017", "Year = 2018", "Year = 2019"];
       
       var selectFilter = document.createElement("select");
@@ -102,8 +105,11 @@
         option.innerHTML = sql;
         selectFilter.appendChild(option);
       });
+// Add the selectFilter to the top-right of the web application
       view.ui.add(selectFilter, "top-right");
-        
+	  
+//Add an event handler to the selectFilter element to get the selected sql expression 
+//and call the setFeatureLayerFilter function 
       selectFilter.addEventListener('change', function (event) {
         // Server side
         //setFeatureLayerFilter(event.target.value);
@@ -111,12 +117,13 @@
         setFeatureLayerViewFilter(event.target.value);
       });
     
-      // Server-side filter
+// Apply a Server-side filter
       function setFeatureLayerFilter(expression) {
         featureLayer.definitionExpression = expression;
       }
     
-      // Client-side filter
+// Apply a Client-side filter (faster than a server-side filter)
+// After the feature layer is loaded - it will perform the SQL expression filter from above
       function setFeatureLayerViewFilter(expression) {
         view.whenLayerView(featureLayer).then(function(featureLayerView) {
           featureLayerView.filter = {
