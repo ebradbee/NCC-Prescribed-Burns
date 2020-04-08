@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device+width,initial-scale=1">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title> GEOM99 - Final Project </title>
 </head>
 <body>
-<div class="logo"><a href="index.html"><img src="Images/ember_logo.png"></a>
+<div class="logo"><a href="index.html"><img src="Images/ember_logo.png" alt="A logo for our 'organization' of a fire within a hexagon"></a>
 </div>
 <div class="nav">
   <ul>
@@ -52,22 +53,23 @@
   <h2> Originally, we had the idea to create a web application that presented prescribed burn data using an interactive time-lapse function. The wording was changed to "an interactive time series" to facilitate a greater scope of potential web applications. </h2> 
   <h2> Publically available data (Alberta's wildfire data) was used to present a proof of concept because of known data security issues with The Nature Conservancy of Canada's data. </h2>
   <h2> We switched to focus on the user experience and user interface as a way to engage the NCC and the Rice Lake Plains community in the future with an application based on the proof of concept after all security issues are addressed. </h2>
+  <h2> Moving Forward: Ten years of the Alberta wildfire data will be downloaded and used as a proof of concept for the filter application, which will identify fires by year from 2009-2019.  This obviates the problem of data security and allows us to demonstrate a working filter application. </h2>
 </div>  
 <div class="main">
   <a id="s2">
     <h8> Step 2 </h8>
   </a>
   <h1> Research Possible Solutions </h1>
-  <h2> <b> I. JavaScript API: Filter a Feature Layer <b>  </h2> 
+  <h2> <strong> I. JavaScript API: Filter a Feature Layer </strong>  </h2> 
   <h2> Advantages: Uses ESRI products (preferred by client), server-side and client-side filter available to configure, can display parcel and prescribed burn sites by year, easy for user to filter by year, map can be integrated within a website, host online or run on separate server, and can add additional add-ons to the application (like the TimeSlider) </h2>
   <h2> Disadvantage: Does not provide a simplified view of temporal data </h2> 
-  <h2> <b> II. JavaScript API: TimeSlider <b> </h2>
+  <h2> <strong> II. JavaScript API: TimeSlider </strong> </h2>
   <h2> Advantages: Uses ESRI products (preferred by client), an interactive graphic used to display temporal data, and can host online or run on separate server </h2> 
   <h2> Disadvantage: May not be very useful for the user to quickly find data on a specific year </h2>
-  <h2> <b> III. Geocortex: Toolbar with bookmarks, filter, and query functionality <b> </h2>
+  <h2> <strong> III. Geocortex: Toolbar with bookmarks, filter, and query functionality </strong> </h2>
   <h2> Advantages: High application functionality with toolbars, can perform queries to find specific year and parcel information, can easily explore all the layers from the sidebar, and a lot of options in terms of add-ons (time slider available) </h2>
   <h2> Disadvantages: Geocortex Essentials technology runs on top of ESRI products and the client does not want to use Geocortex </h2>
-  <h2> <b> IV. Web AppBuilder for ArcGIS: Time slider widget <b> </h2>
+  <h2> <strong> IV. Web AppBuilder for ArcGIS: Time slider widget </strong> </h2>
   <h2> Advantages: No coding required, ready-to-use time slider widget available, uses ESRI products (preferred by client), and can host online or run on separate server </h2>
   <h2> Disadvantage: No coding means limited flexibility on application style and content </h2> 
   </div>
@@ -78,10 +80,10 @@
   </a>
   <h1> Build Solutions/Continue to Research and Troubleshoot </h1>
   <h2> Found Additional Solutions: </h2>
-  <h2> <b> V. Web AppBuilder for ArcGIS: Group Filter Widget <b> </h2>
+  <h2> <strong> V. Web AppBuilder for ArcGIS: Group Filter Widget </strong> </h2>
   <h2> Advantages: No coding required, ready-to-use group filter widget available, uses ESRI products (preferred by client), can host online or run on seperate server, ability to apply filter on one or more layers within the same map </h2> 
   <h2> Disadvantage: Limited flexibility on application style and content, will require code reworking to filter the parcel name and year </h2>
-  <h2> <b> VI. JavaScript API: Query a Feature Layer <b> </h2>
+  <h2> <strong> VI. JavaScript API: Query a Feature Layer </strong> </h2>
   <h2> Advantages: Uses ESRI products (preferred by client), server-side and client-side filter available, potentially could display parcel and prescribed burn sites by year, easy for user to filter by year, map can be integrated within a website, host online or run on seperate server, can add additonal add-ons to the application </h2> 
   <h2> Disadvantage: Does not provide dropdown functionality, does not provide a simplified view of spatial data (like a time-slider) </h2>
   <h1> Our Final Decision: USE THE JAVASCRIPT API: FILTER A FEATURE LAYER </h1>
@@ -129,9 +131,8 @@
   </a>
   <h2> Outcomes: We have decided that our project will become a PROOF OF CONCEPT only. Instead of using the NCC's data, we will use Alberta's wildfire data in our web application. </h2> 
   <h2> This is due to security issues regarding publically hosting the NCC's prescribed burn data and the MNRF's parcel data online. </h2> 
-  <h2> To solve the security issue, we will need to use a utility service that can only be created with a data server. </h2>
+  <h2> To solve the security issue, we may need to use a utility service that can only be created with a data server. </h2>
   <h2> We do not have access to a server at this point; therefore, we are creating a proof of concept to show our JavaScript abilities and to explore our UX/UI goals. </h2>
-  <h2> Moving Forward: Ten years of the Alberta wildfire data will be downloaded and used as a proof of concept for the filter application, which will identify fires by year from 2009-2019.  This obviates the problem of data security and allows us to demonstrate a working filter application. </h2>
 </div>
     
 <div class="main">
@@ -141,7 +142,7 @@
   <h2> Proof of Concept: Using the Alberta wildfire data, we are able to demonstrate that an interactive filter is a feasible design for the larger NCC project. </h2>
   <h2> Conclusion: With a successful proof of concept, we can move forward on the NCC project by addressing the security issues during subsequent weeks.  </h2>
   <h2> Potential Solutions: Create a utility service, and/or create a cached web service for our parcel data, and create hosted feature layer views for our prescribed burn layers. </h2> 
-  <h2> Additonal WebApp Configurations: Continue to research how to filter prescribed burn sites by year AND by parcel using the JavaScript API solution. </h2> 
+  <h2> Additonal WebApp Configurations: Continue to research how to filter prescribed burn sites by year AND by parcel using the JavaScript API solution. In addition, we would like to reformat the year field to remove the comma within the pop-ups (e.g. changing 2,020 to 2020). </h2> 
 </div>
 
 <div class="footer">
