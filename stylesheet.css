@@ -4,7 +4,8 @@ body {margin:0;
   background: white;
   font-family:Arial;
 }
-  
+
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css3_images.asp */
 .logo img {
   position:absolute;
   margin-top:5px;
@@ -21,19 +22,23 @@ body {margin:0;
   background:white;
 }
 
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css_navbar.asp */
 ul {
   padding: 0;
   list-style-type: none;
 }
 
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css_navbar.asp */
 li {
   float: right;
 }
 
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css_navbar.asp */
 a {
   color:#fa762d;
 } 
-  
+
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css_navbar.asp */
 .nav a {
   width:100px;
   display:block;
@@ -44,9 +49,11 @@ a {
   color:black;
   text-align:center;
  }
-  
+
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css_navbar.asp */
 .nav a:hover{color:#fa762d;}
 
+/* Reference - w3schools - Link: https://www.w3schools.com/css/css_boxmodel.asp */
 .main {
   padding: 24px 24px 24px 24px;
   margin: 30px 30px 30px 30px;
@@ -54,16 +61,19 @@ a {
   text-align:center;
 }
 
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css_syntax.asp */
 h2, h7 {
   text-align:left;
   font-weight:normal;
   font-size:20px;
 }
-  
+
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css3_box-sizing.asp */
 * {
   box-sizing: border-box;
 }
-  
+
+/* Reference - w3schools - Link: https://www.w3schools.com/css/css_boxmodel.asp */
 .column {
   float: left;
   width:33.33%;
@@ -72,6 +82,7 @@ h2, h7 {
   text-align:center;
 }
 
+/* Reference - w3schools - Link: https://www.w3schools.com/css/css_boxmodel.asp */
 .twoColumn {
   float: left;
   width:50%;
@@ -79,6 +90,7 @@ h2, h7 {
   text-align:center;
 }  
 
+/* Reference - w3schools - Link: https://www.w3schools.com/css/css_boxmodel.asp */
 .row:after {
   content: "";
   display:table;
@@ -94,7 +106,8 @@ h2, h7 {
     width:100%;
   }
 }
-  
+
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css3_images.asp */
 img {
     max-width:50%;
     height:auto;
@@ -104,6 +117,7 @@ img {
 }
 
 /* Reference: w3schools - Link: https://www.w3schools.com/css/css3_buttons.asp */
+/* Reference: w3schools - Link: https://www.w3schools.com/cssref/css3_pr_transition-duration.asp */
 .button {
   background-color:#fa762d;
   color: white;
@@ -118,12 +132,14 @@ img {
   transition-duration: 0.4s;
 }
 
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css3_buttons.asp */
 .button:hover {
   background-color: white; 
   color:#fa762d; 
   border: 2px solid #fa762d;
 }
 
+/* Reference: w3schools - Link: https://www.w3schools.com/howto/howto_css_fixed_footer.asp */
 .footer {
    left: 0;
    bottom: 0;
@@ -134,16 +150,20 @@ img {
    font-weight:normal;
 }
 
-.footer img {
-  text-align:left;
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css3_images.asp */
+.footer {
+  align:left;
   width: 50%;
 }
 
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css_syntax.asp */
 h8 {
   font-size:32px;
   color:#fa762d;
 }
-  
+
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css_navbar.asp */
+/* Styles the hover on the nav bar */
 .steps a:link, 
 .steps a:visited,
 .steps a:hover {
@@ -151,13 +171,15 @@ h8 {
   text-decoration:none;
 }
 
+/* Reference - w3schools - Link: https://www.w3schools.com/css/css_boxmodel.asp */
 .white_main {
   padding: 24px 24px 24px 24px;
   margin: 30px 30px 30px 30px;
   background:white;
   text-align:center;
 }
-  
+
+/* Reference: w3schools - Link: https://www.w3schools.com/css/css3_images.asp */
 .white_main img {
   max-width: 100%;
   height: auto;
