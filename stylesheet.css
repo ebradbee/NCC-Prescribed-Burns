@@ -159,7 +159,7 @@ img {
 
 /* Reference: w3schools - Link: https://www.w3schools.com/css/css3_images.asp */
 .footer {
-  align:left;
+  text-align:left;
   width: 50%;
 }
 
