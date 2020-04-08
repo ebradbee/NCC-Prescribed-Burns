@@ -29,6 +29,10 @@ ul {
 li {
   float: right;
 }
+
+a {
+  color:#fa762d;
+} 
   
 .nav a {
   width:100px;
